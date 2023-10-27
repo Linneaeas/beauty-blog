@@ -17,6 +17,7 @@ a:hover,
 .active {
   color: #57656d;
 }
+
 .Logo {
   display: flex;
   flex-direction: column;
@@ -28,4 +29,46 @@ a:hover,
 }
 .Subject {
   font-size: 0.8em;
+}
+/*TOGGLE BUTTON*/
+.ToggleBTN {
+  position: absolute;
+  background: none;
+  border: none;
+  box-shadow: none;
+  max-height: fit-content;
+  margin-top: -1em;
+  margin-left: -0.5em;
+}
+.Eye {
+  height: 30px;
+  aspect-ratio: 1;
+  background: #60717b;
+  border-radius: 25px 0 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(55deg);
+}
+.Iris {
+  background: #ccd9e1;
+  height: 19px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2.5px 2.5px #60717b95 inset;
+  transform: rotate(-25deg);
+}
+.Pupil {
+  background: #60717b;
+  height: 9px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+}
+.Current {
+  color: #60717b;
+  font-size: 10px;
+  margin-left: -1em;
 }

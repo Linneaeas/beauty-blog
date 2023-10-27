@@ -7,3 +7,7 @@
 body {
   background: #fcfeff;
 }
+button:hover {
+  cursor: pointer;
+  scale: 110%;
+}
