@@ -1,5 +1,42 @@
-<main class="CreatePost">
-  <div class="NoAccess" *ngIf="currentView === User">
-    You don't have access to this page
-  </div>
+<main class="NoAccess" *ngIf="currentView === User">
+  You don't have access to this page
+</main>
+<main class="CreateNewPost" *ngIf="currentView === Creator">
+  <h2>Create new post</h2>
+  <form class="NewPostForm">
+    <div class="FormFields">
+      <input
+        class="MInput"
+        type="text"
+        id="postTitle"
+        name="postTitle"
+        placeholder="Title"
+      />
+      <textarea
+        class="LTextarea"
+        id="postBody"
+        name="postBody"
+        placeholder="Your post"
+      ></textarea>
+      <input
+        class="MInput"
+        type="text"
+        id="tags"
+        name="tags"
+        placeholder="Tags"
+      />
+      <label class="FileInput">
+        <input
+          class="Hidden"
+          type="file"
+          id="postPic"
+          name="postPic"
+          accept="image/*"
+        />
+        <span>Choose image</span>
+      </label>
+    </div>
+
+    <button class="SaveBTN">ADD POST</button>
+  </form>
 </main>

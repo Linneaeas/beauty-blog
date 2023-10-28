@@ -1,0 +1,22 @@
+.NewPostForm {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.FormFields {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.Hidden {
+  position: absolute;
+  top: -1000px;
+}
+.FileInput {
+  box-shadow: 1px 1px 1px var(--boxShadow);
+  background-color: var(--primaryMediumOpace);
+  color: var(--primaryDark);
+  height: 1rem;
+}

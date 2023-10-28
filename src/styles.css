@@ -1,5 +1,6 @@
 :root {
   --primaryLight: #fcfeff;
+  --primaryMediumOpace: #ccd9e1a6;
   --primaryMedium: #ccd9e1;
   --primaryDark: #57656d;
   --boxShadow: #57656d7f;
@@ -17,21 +18,59 @@ main {
   flex-direction: column;
   gap: 2rem;
   margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 body {
   background: var(--primaryLight);
   color: var(--primaryDark);
 }
-button {
+button,
+.FileInput {
   background-color: var(--primaryMedium);
   color: var(--discreteFont);
+  font-size: 17px;
   border: none;
-  padding: 0.5rem;
-  border-radius: 2px;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.6rem;
+  border-radius: 4px;
   box-shadow: 2px 2px 2px var(--boxShadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-button:hover {
+button:hover,
+.FileInput:hover {
   color: var(--primaryDark);
   cursor: pointer;
   scale: 110%;
+}
+input,
+textarea {
+  background: var(--primaryMediumOpace);
+  border: none;
+  border-radius: 2px;
+  padding: 0.5rem;
+  font-size: 15px;
+  box-shadow: 1px 1px 1px var(--boxShadow);
+}
+input:hover,
+textarea:hover {
+  cursor: pointer;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 1px 1px 1px 1px var(--boxShadow);
+  border: 0.5px solid var(--boxShadow);
+}
+
+.MInput {
+  width: 12rem;
+  text-align: center;
+  font-size: 16px;
+}
+.LTextarea {
+  height: 20rem;
+  width: 20rem;
 }
