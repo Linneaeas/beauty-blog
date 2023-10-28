@@ -1,6 +1,10 @@
 <main class="HomePage">
   <h2>Welcome!</h2>
-  <button class="NewPostBTN" *ngIf="currentView === Creator">
+  <button
+    class="NewPostBTN"
+    *ngIf="currentView === Creator"
+    (click)="createNewPost()"
+  >
     CREATE NEW POST
   </button>
 </main>

@@ -3,6 +3,7 @@ import {
   ViewStateService,
   ViewType,
 } from 'src/app/services/view-state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +15,15 @@ export class HomeComponent {
   Creator = ViewType.Creator;
   User = ViewType.User;
 
-  constructor(private viewStateService: ViewStateService) {
+  constructor(
+    private viewStateService: ViewStateService,
+    private router: Router
+  ) {
     this.viewStateService.currentView$.subscribe((view) => {
       this.currentView = view;
     });
+  }
+  createNewPost() {
+    this.router.navigate(['/CreatePost']);
   }
 }
