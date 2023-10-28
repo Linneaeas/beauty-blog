@@ -1,5 +1,5 @@
 header {
-  background: #ccd9e1;
+  background-color: var(--primaryMedium);
   padding: 1em;
 }
 ul {
@@ -11,11 +11,11 @@ ul {
 a {
   text-decoration: none;
   font-size: 1.5em;
-  color: white;
+  color: var(--discreteFont);
 }
 a:hover,
 .active {
-  color: #57656d;
+  color: var(--primaryDark);
 }
 
 .Logo {
@@ -37,38 +37,41 @@ a:hover,
   border: none;
   box-shadow: none;
   max-height: fit-content;
-  margin-top: -1em;
-  margin-left: -0.5em;
+  margin-top: -1.7em;
+  margin-left: -1em;
+  display: grid;
 }
 .Eye {
   height: 30px;
   aspect-ratio: 1;
-  background: #60717b;
+  background: var(--primaryDark);
   border-radius: 25px 0 25px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: rotate(55deg);
+  margin-top: -4px;
 }
 .Iris {
-  background: #ccd9e1;
+  background: var(--primaryMedium);
   height: 19px;
   aspect-ratio: 1;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 2.5px 2.5px #60717b95 inset;
+  box-shadow: 2.5px 2.5px var(--boxShadow) inset;
   transform: rotate(-25deg);
 }
 .Pupil {
-  background: #60717b;
+  background: var(--primaryDark);
   height: 9px;
   aspect-ratio: 1;
   border-radius: 100%;
 }
 .Current {
-  color: #60717b;
+  color: var(--primaryDark);
   font-size: 10px;
-  margin-left: -1em;
+  text-align: left;
+  margin-left: -5px;
 }
