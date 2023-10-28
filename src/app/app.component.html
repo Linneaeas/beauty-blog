@@ -1,6 +1,6 @@
 <header>
-  <button class="ToggleBTN">
-    <label class="Current">Creator</label>
+  <button class="ToggleBTN" (click)="toggleView()">
+    <label class="Current">{{ getViewButtonText() }}</label>
     <div class="Eye">
       <div class="Iris">
         <div class="Pupil"></div>
