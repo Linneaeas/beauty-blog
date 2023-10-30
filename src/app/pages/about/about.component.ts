@@ -18,7 +18,8 @@ export class AboutComponent {
   creator: Creator = {
     firstName: '',
     lastName: '',
-    body: '',
+    bodyOne: '',
+    bodyTwo: '',
     image: '',
   };
 

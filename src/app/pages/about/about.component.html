@@ -1,7 +1,8 @@
 <main class="AboutPage">
-  <h2 class="AboutTitle" *ngIf="!editNameFields">
-    {{ creator.firstName }} {{ creator.lastName }}
-  </h2>
+  <div class="AboutTitle" *ngIf="!editNameFields">
+    <h2>{{ creator.firstName }}</h2>
+    <h2>{{ creator.lastName }}</h2>
+  </div>
   <button
     class="EditBTN Name"
     *ngIf="currentView === Creator && !editNameFields"
@@ -9,14 +10,16 @@
   >
     Edit name
   </button>
-  <div class="EditMode" *ngIf="editNameFields">
+  <div class="AboutTitle" *ngIf="editNameFields">
     <input class="SInput" type="text" [(ngModel)]="creator.firstName" />
     <input class="SInput" type="text" [(ngModel)]="creator.lastName" />
     <button class="SaveBTN" (click)="onSave()">SAVE</button>
   </div>
+
   <section class="About">
-    <div class="TextBox">
-      <p class="BodyText" *ngIf="!editBodyFields">{{ creator.body }}</p>
+    <div *ngIf="!editBodyFields" class="BodyTextContainer">
+      <p class="BodyText">{{ creator.bodyOne }}</p>
+      <p class="BodyText">{{ creator.bodyTwo }}</p>
       <button
         class="EditBTN Body"
         (click)="onEditBody()"
@@ -24,16 +27,23 @@
       >
         Edit text
       </button>
-      <div class="EditMode" *ngIf="editBodyFields">
-        <textarea
-          class="BigTextarea"
-          type="text"
-          [(ngModel)]="creator.body"
-        ></textarea>
-        <button class="SaveBTN" (click)="onSave()">SAVE</button>
-      </div>
     </div>
-    <div class="PictureBox">
+
+    <div class="BodyTextContainer" *ngIf="editBodyFields">
+      <textarea
+        class="EditModeBody"
+        type="text"
+        [(ngModel)]="creator.bodyOne"
+      ></textarea>
+      <textarea
+        class="EditModeBody"
+        type="text"
+        [(ngModel)]="creator.bodyTwo"
+      ></textarea>
+      <button class="SaveBTN" (click)="onSave()">SAVE</button>
+    </div>
+
+    <div class="ImageContainer">
       <img class="CreatorPic" [src]="creator.image" />
       <button
         class="EditBTN Picture"
@@ -42,7 +52,7 @@
       >
         Edit pic
       </button>
-      <div class="EditMode" *ngIf="editImage">
+      <div class="EditModeImage" *ngIf="editImage">
         <label class="FileInput">
           <input
             class="Hidden"
@@ -52,7 +62,7 @@
             accept="image/*"
             (change)="handleFileInput($event)"
           />
-          <span>IMG</span>
+          <span>Choose image</span>
         </label>
         <button class="SaveBTN" (click)="onSave()">SAVE</button>
       </div>

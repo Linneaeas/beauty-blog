@@ -1,15 +1,62 @@
+.About {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.AboutTitle {
+  font-size: 40px;
+  color: var(--primaryMedium);
+  letter-spacing: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.BodyTextContainer {
+  background-color: var(--primaryMediumOpace);
+  box-shadow: 2px 2px 2px var(--boxShadow);
+  border-radius: 4px;
+  height: fit-content;
+  max-width: 40rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.EditModeBody {
+  height: 10rem;
+  width: 40rem;
+}
 .CreatorPic {
-  height: 100px;
+  max-height: 30rem;
+  border-radius: 4px;
+}
+.ImageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.EditModeImage {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 .Hidden {
   position: absolute;
   top: -1000px;
 }
 .FileInput {
-  height: 1.5rem;
-  width: 3rem;
-  background: var(--boxShadow);
-  padding: 0.3rem;
-  display: inline-block;
+  height: 0.5rem;
+  width: 8rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

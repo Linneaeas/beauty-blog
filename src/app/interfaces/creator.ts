@@ -1,6 +1,7 @@
 export interface Creator {
   firstName: string;
   lastName: string;
-  body: string;
+  bodyOne: string;
+  bodyTwo: string;
   image: string;
 }
