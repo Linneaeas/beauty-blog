@@ -1,0 +1,15 @@
+.CreatorPic {
+  height: 100px;
+}
+.Hidden {
+  position: absolute;
+  top: -1000px;
+}
+.FileInput {
+  height: 1.5rem;
+  width: 3rem;
+  background: var(--boxShadow);
+  padding: 0.3rem;
+  display: inline-block;
+  text-align: center;
+}

@@ -1,1 +1,61 @@
-<p>about works!</p>
+<main class="AboutPage">
+  <h2 class="AboutTitle" *ngIf="!editNameFields">
+    {{ creator.firstName }} {{ creator.lastName }}
+  </h2>
+  <button
+    class="EditBTN Name"
+    *ngIf="currentView === Creator && !editNameFields"
+    (click)="onEditName()"
+  >
+    Edit name
+  </button>
+  <div class="EditMode" *ngIf="editNameFields">
+    <input class="SInput" type="text" [(ngModel)]="creator.firstName" />
+    <input class="SInput" type="text" [(ngModel)]="creator.lastName" />
+    <button class="SaveBTN" (click)="onSave()">SAVE</button>
+  </div>
+  <section class="About">
+    <div class="TextBox">
+      <p class="BodyText" *ngIf="!editBodyFields">{{ creator.body }}</p>
+      <button
+        class="EditBTN Body"
+        (click)="onEditBody()"
+        *ngIf="currentView === Creator && !editBodyFields"
+      >
+        Edit text
+      </button>
+      <div class="EditMode" *ngIf="editBodyFields">
+        <textarea
+          class="BigTextarea"
+          type="text"
+          [(ngModel)]="creator.body"
+        ></textarea>
+        <button class="SaveBTN" (click)="onSave()">SAVE</button>
+      </div>
+    </div>
+    <div class="PictureBox">
+      <img class="CreatorPic" [src]="creator.image" />
+      <button
+        class="EditBTN Picture"
+        (click)="onEditImage()"
+        *ngIf="currentView === Creator && !editImage"
+      >
+        Edit pic
+      </button>
+      <div class="EditMode" *ngIf="editImage">
+        <label class="FileInput">
+          <input
+            class="Hidden"
+            type="file"
+            id="CreatorPic"
+            name="CreatorPic"
+            accept="image/*"
+            (change)="handleFileInput($event)"
+          />
+          <span>IMG</span>
+        </label>
+        <button class="SaveBTN" (click)="onSave()">SAVE</button>
+      </div>
+    </div>
+  </section>
+</main>
