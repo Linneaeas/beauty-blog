@@ -1,6 +1,9 @@
 header {
   background-color: var(--primaryMedium);
   padding: 1em;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 ul {
   list-style: none;

@@ -1,3 +1,9 @@
+.AboutPage {
+  position: fixed;
+  top: 5rem;
+  z-index: -1;
+  width: 100%;
+}
 .About {
   display: flex;
   align-items: center;
@@ -15,6 +21,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1em;
+  padding: 1rem;
 }
 
 .BodyTextContainer {
