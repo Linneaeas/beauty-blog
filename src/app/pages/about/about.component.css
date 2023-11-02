@@ -1,8 +1,7 @@
 .AboutPage {
-  position: fixed;
-  top: 5rem;
-  z-index: -1;
   width: 100%;
+  margin-top: 12em;
+  margin-bottom: 5em;
 }
 .About {
   display: flex;
@@ -11,17 +10,6 @@
   flex-wrap: wrap;
   margin-left: 3rem;
   margin-right: 3rem;
-}
-.AboutTitle {
-  font-size: 40px;
-  color: var(--primaryMedium);
-  letter-spacing: 2.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1em;
-  padding: 1rem;
 }
 
 .BodyTextContainer {

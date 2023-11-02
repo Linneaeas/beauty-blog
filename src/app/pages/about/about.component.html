@@ -1,21 +1,4 @@
 <main class="AboutPage">
-  <div class="AboutTitle" *ngIf="!editNameFields">
-    <h2>{{ creator.firstName }}</h2>
-    <h2>{{ creator.lastName }}</h2>
-  </div>
-  <button
-    class="EditBTN Name"
-    *ngIf="currentView === Creator && !editNameFields"
-    (click)="onEditName()"
-  >
-    Edit name
-  </button>
-  <div class="AboutTitle" *ngIf="editNameFields">
-    <input class="SInput" type="text" [(ngModel)]="creator.firstName" />
-    <input class="SInput" type="text" [(ngModel)]="creator.lastName" />
-    <button class="SaveBTN" (click)="onSave()">SAVE</button>
-  </div>
-
   <section class="About">
     <div *ngIf="!editBodyFields" class="BodyTextContainer">
       <p class="BodyText">{{ creator.bodyOne }}</p>
@@ -69,5 +52,3 @@
     </div>
   </section>
 </main>
-
-<app-contact></app-contact>

@@ -16,17 +16,16 @@ export class ContactComponent {
 
   onSubmit() {
     console.log('Name:', this.yourName);
-
     console.log('Email:', this.yourEmail);
     console.log('Phone:', this.yourNumber);
     console.log('Message:', this.yourMessage);
 
     this.yourName = '';
-
     this.yourEmail = '';
     this.yourNumber = '';
     this.yourMessage = '';
     this.showFormFields = false;
     this.sent = true;
+    console.log('sent');
   }
 }

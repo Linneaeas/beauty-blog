@@ -1,23 +1,15 @@
 .ContactPage {
-  margin-top: 95vh;
   background: var(--primaryLight);
 }
-.ContactHeader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 3rem;
-  background-color: var(--primaryMedium);
-  position: sticky;
-  top: 5rem;
-}
+
 .ContactForm {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: var(--primaryLight);
+  width: 100%;
+  margin-top: 10em;
   padding: 1rem;
   padding-top: 1rem;
   padding-bottom: 8rem;
@@ -64,4 +56,5 @@ td {
   font-size: 20px;
   text-align: center;
   padding: 1rem;
+  position: sticky;
 }

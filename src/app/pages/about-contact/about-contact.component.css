@@ -1,0 +1,35 @@
+.AboutTitle {
+  font-size: 40px;
+  color: var(--primaryMedium);
+  letter-spacing: 2.5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1rem;
+}
+.AboutHeader {
+  position: fixed;
+  width: 100%;
+  top: 5rem;
+  padding-top: 1rem;
+  background-color: var(--primaryLight);
+}
+.ContactHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--primaryMedium);
+  position: sticky;
+  top: 11rem;
+  transition: width 5s linear 10s;
+}
+.ContactBTN {
+  box-shadow: none;
+  font-size: 25px;
+}
+.ContactContainer {
+  overflow: hidden;
+}

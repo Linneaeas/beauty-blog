@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { AboutContactComponent } from './pages/about-contact/about-contact.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     BlogComponent,
     CreatePostComponent,
     ContactComponent,
+    AboutContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [LocalStorageService],
