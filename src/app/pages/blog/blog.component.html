@@ -6,8 +6,8 @@
       *ngFor="let post of posts"
       (click)="navigateToPost(post.id)"
     >
-      <h3 class="PostTitle">{{ post.title }}</h3>
       <img class="PostPic" [src]="post.thumbnailUrl" />
+      <h3 class="PostTitle">{{ post.title }}</h3>
     </section>
   </div>
 </main>
