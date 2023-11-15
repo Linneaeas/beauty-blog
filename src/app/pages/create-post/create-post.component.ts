@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { Post } from 'src/app/interfaces/post';
 import {
   ViewStateService,
   ViewType,
@@ -13,6 +15,18 @@ export class CreatePostComponent {
   currentView!: ViewType;
   Creator = ViewType.Creator;
   User = ViewType.User;
+  post: Post = {
+    id: '',
+    title: '',
+    body: '',
+    tags: [],
+    thumbnailUrl: '',
+    creationDate: new Date(),
+    likes: 0,
+    dislikes: 0,
+    comments: [],
+  };
+  tagInput: string = '';
 
   constructor(private viewStateService: ViewStateService) {
     this.viewStateService.currentView$.subscribe((view) => {

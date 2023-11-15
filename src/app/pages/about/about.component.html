@@ -3,14 +3,15 @@
     <div class="AboutTitle" *ngIf="!editNameFields">
       <h2>{{ creator.firstName }}</h2>
       <h2>{{ creator.lastName }}</h2>
+      <button
+        class="EditBTN Name"
+        *ngIf="currentView === Creator && !editNameFields"
+        (click)="onEditName()"
+      >
+        Edit name
+      </button>
     </div>
-    <button
-      class="EditBTN Name"
-      *ngIf="currentView === Creator && !editNameFields"
-      (click)="onEditName()"
-    >
-      Edit name
-    </button>
+
     <div class="AboutTitle" *ngIf="editNameFields">
       <input class="SInput" type="text" [(ngModel)]="creator.firstName" />
       <input class="SInput" type="text" [(ngModel)]="creator.lastName" />
@@ -156,8 +157,10 @@
       </div>
     </form>
     <div class="Confirm" *ngIf="sent">
-      <p>Thank you for your message. I will answer you as soon as possible!</p>
-      <p>Kind regards, Alex</p>
+      <p>
+        Thank you for your message. I will answer you as soon as possible! Kind
+        regards, Alex
+      </p>
     </div>
   </section>
 </main>

@@ -1,8 +1,7 @@
 .AboutPage {
   width: 100%;
-  margin-top: 12em;
   margin-bottom: 5em;
-  justify-content: space-evenly;
+  margin-top: 12em;
 }
 .AboutHeader {
   position: fixed;
@@ -103,6 +102,11 @@
   background: var(--primaryLight);
   width: 100%;
   margin-top: 6rem;
+  bottom: -100%;
+  transition: transform 1s ease;
+}
+.ContactForm.show {
+  transform: translateY(0);
 }
 h3 {
   font-size: 30px;

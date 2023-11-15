@@ -17,7 +17,7 @@ main {
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 1.5rem;
+  margin-top: 7em;
 }
 body {
   background: var(--primaryLight);
