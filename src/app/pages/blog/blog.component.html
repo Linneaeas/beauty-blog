@@ -1,1 +1,13 @@
-<p>blog works!</p>
+<main class="BlogPage">
+  <h2 class="Headline">LATEST POSTS</h2>
+  <div class="PostsCont">
+    <section
+      class="OnePost"
+      *ngFor="let post of posts"
+      (click)="navigateToPost(post.id)"
+    >
+      <h3 class="PostTitle">{{ post.title }}</h3>
+      <img class="PostPic" [src]="post.thumbnailUrl" />
+    </section>
+  </div>
+</main>

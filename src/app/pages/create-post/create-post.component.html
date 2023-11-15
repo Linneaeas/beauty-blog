@@ -11,12 +11,14 @@
         id="postTitle"
         name="postTitle"
         placeholder="Title"
+        [(ngModel)]="post.title"
       />
       <textarea
         class="LTextarea"
         id="postBody"
         name="postBody"
         placeholder="Your post"
+        [(ngModel)]="post.body"
       ></textarea>
       <input
         class="MInput"
@@ -24,6 +26,7 @@
         id="tags"
         name="tags"
         placeholder="Tags"
+        [(ngModel)]="tagInput"
       />
       <label class="FileInput">
         <input
@@ -32,11 +35,12 @@
           id="postPic"
           name="postPic"
           accept="image/*"
+          (change)="handleFileInput($event)"
         />
         <span>Choose image</span>
       </label>
     </div>
 
-    <button class="SaveBTN">ADD POST</button>
+    <button class="SaveBTN" (click)="onSubmit()">ADD POST</button>
   </form>
 </main>

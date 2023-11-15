@@ -8,6 +8,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
+import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { CreatePostComponent } from './pages/create-post/create-post.component';
     HomeComponent,
     BlogComponent,
     CreatePostComponent,
+    BlogPostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [LocalStorageService],

@@ -28,9 +28,65 @@ export class CreatePostComponent {
   };
   tagInput: string = '';
 
-  constructor(private viewStateService: ViewStateService) {
+  constructor(
+    private localStorageService: LocalStorageService,
+    private viewStateService: ViewStateService
+  ) {
     this.viewStateService.currentView$.subscribe((view) => {
       this.currentView = view;
     });
+  }
+
+  /* handleFileInput=TEMPORARY FOR IMAGES, change to thumbnail url link*/
+  handleFileInput(event: any) {
+    const files: FileList = event.target.files;
+
+    if (files.length > 0) {
+      const file = files[0];
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        this.post.thumbnailUrl = reader.result as string;
+      };
+
+      reader.readAsDataURL(file);
+    }
+  }
+  onSubmit() {
+    if (!this.post.thumbnailUrl) {
+      return;
+    }
+    this.post.id = Date.now().toString() + Math.floor(Math.random() * 10);
+    this.post.tags = this.tagInput.split(',').map((tag) => tag.trim());
+
+    const newPost: Post = {
+      id: this.post.id,
+      title: this.post.title,
+      body: this.post.body,
+      tags: this.post.tags,
+      thumbnailUrl: this.post.thumbnailUrl,
+      creationDate: this.post.creationDate,
+      likes: this.post.likes,
+      dislikes: this.post.dislikes,
+      comments: this.post.comments,
+    };
+
+    let posts: Post[] = this.localStorageService.get('posts') || [];
+    posts.push(newPost);
+
+    this.localStorageService.set('posts', posts);
+
+    this.post = {
+      id: '',
+      title: '',
+      body: '',
+      tags: [],
+      thumbnailUrl: '',
+      creationDate: new Date(),
+      likes: 0,
+      dislikes: 0,
+      comments: [],
+    };
+    this.tagInput = '';
   }
 }
