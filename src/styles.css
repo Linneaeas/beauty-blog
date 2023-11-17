@@ -13,6 +13,16 @@
   font-family: "Baskerville Old Face";
   font-weight: lighter;
 }
+h2 {
+  font-size: 40px;
+  color: var(--primaryMedium);
+  letter-spacing: 2.5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 1rem;
+}
 main {
   display: flex;
   align-items: center;

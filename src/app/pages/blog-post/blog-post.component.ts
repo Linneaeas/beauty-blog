@@ -43,16 +43,12 @@ export class BlogPostComponent {
       this.currentView = view;
     });
   }
-  getSavedPostData(): Post[] {
-    return this.localStorageService.get('posts');
-  }
+  /*POSTS % LOCALSTORAGE*/
   ngOnInit() {
     const postId = this.route.snapshot.paramMap.get('id');
-
     const postData = this.getSavedPostData().find(
       (post: any) => post.id === postId
     );
-
     if (postData) {
       this.post = postData;
     }
@@ -61,4 +57,32 @@ export class BlogPostComponent {
       this.post.dislikes = this.post.dislikes || 0;
     }
   }
+  getSavedPostData(): Post[] {
+    return this.localStorageService.get('posts');
+  }
+  private updatePostInLocalStorage() {
+    if (this.post) {
+      const posts: Post[] = this.localStorageService.get('posts') || [];
+      const index = posts.findIndex((p) => p.id === this.post?.id);
+      if (index !== -1) {
+        posts[index] = this.post;
+        this.localStorageService.set('posts', posts);
+      }
+    }
+  }
+  /*REACTIONS*/
+  increaseLikes() {
+    if (this.post) {
+      this.post.likes++;
+      this.updatePostInLocalStorage();
+    }
+  }
+  increaseDislikes() {
+    if (this.post) {
+      this.post.dislikes++;
+      this.updatePostInLocalStorage();
+    }
+  }
+  /*COMMENTS*/
+  /*EDIT MODE*/
 }

@@ -7,18 +7,13 @@
   position: sticky;
   width: 100%;
   top: 5rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   background-color: var(--primaryLight);
 }
 .AboutTitle {
-  font-size: 40px;
-  color: var(--primaryMedium);
-  letter-spacing: 2.5px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1em;
-  padding: 1rem;
 }
 
 .About {

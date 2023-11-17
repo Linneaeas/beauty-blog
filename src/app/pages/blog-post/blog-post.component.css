@@ -1,3 +1,42 @@
-h1 {
-  margin-top: 5em;
+.BlogPost {
+  margin-top: 8em;
+  gap: 2em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.PostContent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.PostPic {
+  max-height: 30rem;
+  border-radius: 4px;
+}
+
+.BodyTags {
+  background-color: var(--primaryLighter);
+  box-shadow: 2px 2px 2px var(--boxShadow);
+  border-radius: 4px;
+  height: fit-content;
+  max-width: 40rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.Tags {
+  display: flex;
+  gap: 0.5rem;
+  font-size: smaller;
+}
+.Reactions {
+  display: flex;
+  gap: 5rem;
+}
+.ReactContainer {
+  text-align: right;
 }

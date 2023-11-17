@@ -1,9 +1,25 @@
 <main class="BlogPost">
   <h2 class="PostTitle">{{ post.title }}</h2>
-  <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
-  <p class="PostBody">{{ post.body }}</p>
-  <p class="Tag" *ngFor="let tag of post.tags; let last = last">#{{ tag }}</p>
-  <span class="NoOf Like">{{ post.likes }}</span>
-  <span class="NoOf DontLike">{{ post.dislikes }}</span>
+  <section class="PostContent">
+    <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
+    <div class="BodyTags">
+      <p class="PostBody">{{ post.body }}</p>
+      <div class="Tags">
+        <p class="Tag" *ngFor="let tag of post.tags; let last = last">
+          #{{ tag }}
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="Reactions">
+    <div class="ReactContainer">
+      <span class="NoOf Likes">{{ post.likes }}</span>
+      <button (click)="increaseLikes()">LIKE</button>
+    </div>
+    <div class="ReactContainer">
+      <span class="NoOf DisLikes">{{ post.dislikes }}</span>
+      <button (click)="increaseDislikes()">DISLIKE</button>
+    </div>
+  </div>
   <div class="Comments" *ngFor="let comment of post.comments"></div>
 </main>
