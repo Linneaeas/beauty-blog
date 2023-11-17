@@ -1,1 +1,9 @@
-<p>blog-post works!</p>
+<main class="BlogPost">
+  <h2 class="PostTitle">{{ post.title }}</h2>
+  <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
+  <p class="PostBody">{{ post.body }}</p>
+  <p class="Tag" *ngFor="let tag of post.tags; let last = last">#{{ tag }}</p>
+  <span class="NoOf Like">{{ post.likes }}</span>
+  <span class="NoOf DontLike">{{ post.dislikes }}</span>
+  <div class="Comments" *ngFor="let comment of post.comments"></div>
+</main>
