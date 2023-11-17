@@ -53,10 +53,22 @@ export class CreatePostComponent {
     }
   }
   onSubmit() {
-    if (!this.post.thumbnailUrl) {
+    if (!this.post.thumbnailUrl || !this.post.title) {
       return;
     }
-    this.post.id = Date.now().toString() + Math.floor(Math.random() * 10);
+
+    const currentDate = new Date();
+    const formattedDate = currentDate
+      .toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      })
+      .replace(/ /g, '_');
+
+    const postId = `${this.post.title}_${formattedDate}`;
+
+    this.post.id = postId;
     this.post.tags = this.tagInput.split(',').map((tag) => tag.trim());
 
     const newPost: Post = {
