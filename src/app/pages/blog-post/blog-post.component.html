@@ -21,5 +21,8 @@
       <button (click)="increaseDislikes()">DISLIKE</button>
     </div>
   </div>
-  <div class="Comments" *ngFor="let comment of post.comments"></div>
+  <div class="OneComment" *ngFor="let PostComment of post.comments">
+    <p class="CommentText">{{ PostComment.text }}</p>
+    <span class="CommentName">{{ PostComment.name }}</span>
+  </div>
 </main>

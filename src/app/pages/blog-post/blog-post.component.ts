@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/interfaces/post';
-import { Comment } from 'src/app/interfaces/comment';
+import { PostComment } from 'src/app/interfaces/post-comment';
+
 import {
   ViewType,
   ViewStateService,
@@ -13,7 +14,7 @@ import {
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.css'],
 })
-export class BlogPostComponent {
+export class BlogPostComponent implements OnInit {
   currentView!: ViewType;
   Creator = ViewType.Creator;
   User = ViewType.User;
@@ -28,12 +29,11 @@ export class BlogPostComponent {
     dislikes: 0,
     comments: [],
   };
-  newComment: Comment = {
+  newComment: PostComment = {
     id: '',
     text: '',
     name: '',
   };
-
   constructor(
     private viewStateService: ViewStateService,
     private route: ActivatedRoute,
@@ -43,6 +43,7 @@ export class BlogPostComponent {
       this.currentView = view;
     });
   }
+
   /*POSTS % LOCALSTORAGE*/
   ngOnInit() {
     const postId = this.route.snapshot.paramMap.get('id');
@@ -84,5 +85,17 @@ export class BlogPostComponent {
     }
   }
   /*COMMENTS*/
-  /*EDIT MODE*/
+  addComment() {
+    if (this.newComment.text && this.newComment.name) {
+      this.newComment.id =
+        Date.now().toString() + Math.floor(Math.random() * 10);
+      this.post.comments.push(this.newComment);
+      this.updatePostInLocalStorage();
+      this.newComment = {
+        id: '',
+        text: '',
+        name: '',
+      };
+    }
+  }
 }
