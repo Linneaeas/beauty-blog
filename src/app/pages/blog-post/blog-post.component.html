@@ -13,16 +13,49 @@
   </section>
   <div class="Reactions">
     <div class="ReactContainer">
-      <span class="NoOf Likes">{{ post.likes }}</span>
-      <button (click)="increaseLikes()">LIKE</button>
+      <button class="DislikeBTN" (click)="increaseDislikes()"></button>
+      <span class="NoOf DisLikes">{{ post.dislikes }}</span>
     </div>
     <div class="ReactContainer">
-      <span class="NoOf DisLikes">{{ post.dislikes }}</span>
-      <button (click)="increaseDislikes()">DISLIKE</button>
+      <button class="LikeBTN" (click)="increaseLikes()"></button>
+      <span class="NoOf Likes">{{ post.likes }}</span>
     </div>
+
+    <button
+      class="CommentBTN"
+      (click)="showCommentForm = !showCommentForm"
+    ></button>
   </div>
-  <div class="OneComment" *ngFor="let PostComment of post.comments">
-    <p class="CommentText">{{ PostComment.text }}</p>
-    <span class="CommentName">{{ PostComment.name }}</span>
+
+  <form class="NewComment" (ngSubmit)="addComment()" *ngIf="showCommentForm">
+    <input
+      class="SInput"
+      type="text"
+      id="comment"
+      name="comment"
+      placeholder="Comment.."
+      [(ngModel)]="newComment.text"
+    />
+    <input
+      class="XSInput"
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Name.."
+      [(ngModel)]="newComment.name"
+    />
+    <input
+      class="SaveBTN"
+      type="submit"
+      name="addComment"
+      id="addComment"
+      value="+"
+    />
+  </form>
+  <div class="CommentSection">
+    <div class="OneComment" *ngFor="let PostComment of post.comments">
+      <p class="CommentText">{{ PostComment.text }}</p>
+      <p class="CommentName">/ {{ PostComment.name }}</p>
+    </div>
   </div>
 </main>

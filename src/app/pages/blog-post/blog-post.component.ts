@@ -85,6 +85,8 @@ export class BlogPostComponent implements OnInit {
     }
   }
   /*COMMENTS*/
+  showCommentForm: boolean = false;
+
   addComment() {
     if (this.newComment.text && this.newComment.name) {
       this.newComment.id =
@@ -96,6 +98,7 @@ export class BlogPostComponent implements OnInit {
         text: '',
         name: '',
       };
+      this.showCommentForm = false;
     }
   }
 }
