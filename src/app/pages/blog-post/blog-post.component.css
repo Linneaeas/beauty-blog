@@ -7,7 +7,9 @@
   flex-wrap: wrap;
   align-items: center;
 }
-
+.TitleContainer {
+  display: flex;
+}
 .PostContent {
   display: flex;
   justify-content: center;
@@ -74,7 +76,7 @@
 }
 .OneComment {
   display: flex;
-  align-items: end;
+
   gap: 0.5rem;
   background-color: var(--primaryLighter);
   padding: 0.5rem;
@@ -88,8 +90,11 @@
   color: var(--boxShadow);
   font-size: 14px;
 }
-
 .NewComment {
   display: flex;
   gap: 1rem;
+}
+
+.DeleteBTN:hover {
+  color: red;
 }

@@ -3,7 +3,6 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/interfaces/post';
 import { PostComment } from 'src/app/interfaces/post-comment';
-
 import {
   ViewType,
   ViewStateService,
@@ -100,5 +99,47 @@ export class BlogPostComponent implements OnInit {
       };
       this.showCommentForm = false;
     }
+  }
+
+  /*EDIT MODE*/
+  editTitleField: boolean = false;
+  editBodyField: boolean = false;
+  deleted: boolean = false;
+
+  onEditTitle() {
+    this.editTitleField = true;
+  }
+  onEditBody() {
+    this.editBodyField = true;
+  }
+  onDeleteComment(comment: PostComment) {
+    if (this.post) {
+      if (window.confirm('Are you sure you want to delete this comment?')) {
+        const commentIndex = this.post.comments.indexOf(comment);
+        if (commentIndex !== -1) {
+          this.post.comments.splice(commentIndex, 1);
+          this.updatePostInLocalStorage();
+        }
+      }
+    }
+  }
+  onDeletePost() {
+    if (this.post) {
+      if (window.confirm('Are you sure you want to delete this post?')) {
+        const posts: Post[] = this.localStorageService.get('posts') || [];
+        const postIndex = posts.findIndex((p) => p.id === this.post.id);
+        if (postIndex !== -1) {
+          posts.splice(postIndex, 1);
+          this.localStorageService.set('posts', posts);
+          this.deleted = true;
+        }
+      }
+    }
+  }
+  onSave() {
+    this.editTitleField = false;
+    this.editBodyField = false;
+
+    this.updatePostInLocalStorage();
   }
 }

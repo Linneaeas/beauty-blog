@@ -1,5 +1,12 @@
 <main class="BlogPage">
   <h2 class="Headline">LATEST POSTS</h2>
+  <button
+    class="NewPostBTN"
+    *ngIf="currentView === Creator"
+    (click)="createNewPost()"
+  >
+    CREATE NEW POST
+  </button>
   <div class="PostsCont">
     <section
       class="OnePost"

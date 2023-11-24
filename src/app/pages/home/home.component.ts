@@ -23,7 +23,4 @@ export class HomeComponent {
       this.currentView = view;
     });
   }
-  createNewPost() {
-    this.router.navigate(['/CreatePost']);
-  }
 }

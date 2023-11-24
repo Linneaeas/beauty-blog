@@ -36,7 +36,8 @@ body {
 }
 button,
 .FileInput,
-.SendBTN {
+.SendBTN,
+.SaveBTN {
   background-color: var(--primaryMedium);
   color: var(--discreteFont);
   font-size: 17px;
@@ -52,11 +53,13 @@ button,
 }
 button:hover,
 .FileInput:hover,
-.SendBTN:hover {
+.SendBTN:hover,
+.SaveBTN:hover {
   color: var(--primaryDark);
   cursor: pointer;
   scale: 110%;
 }
+
 input,
 textarea {
   background: var(--primaryMediumOpace);

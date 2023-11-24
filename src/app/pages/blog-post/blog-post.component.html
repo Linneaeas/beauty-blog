@@ -1,9 +1,47 @@
-<main class="BlogPost">
-  <h2 class="PostTitle">{{ post.title }}</h2>
+<main class="Deleted" *ngIf="deleted">This Post have been deleted</main>
+<main class="BlogPost" *ngIf="!deleted">
+  <button
+    class="DeleteBTN"
+    *ngIf="currentView === Creator"
+    (click)="onDeletePost()"
+  >
+    DELETE POST
+  </button>
+  <div class="TitleContainer">
+    <h2 class="PostTitle" *ngIf="!editTitleField">{{ post.title }}</h2>
+    <button
+      class="EditBTN"
+      *ngIf="currentView === Creator && !editTitleField"
+      (click)="onEditTitle()"
+    >
+      EDIT
+    </button>
+    <div class="EditMode" *ngIf="editTitleField">
+      <input class="SInput" type="text" [(ngModel)]="post.title" />
+      <button class="SaveBTN" (click)="onSave()">SAVE</button>
+    </div>
+  </div>
+
   <section class="PostContent">
     <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
     <div class="BodyTags">
-      <p class="PostBody">{{ post.body }}</p>
+      <p class="PostBody" *ngIf="!editBodyField">{{ post.body }}</p>
+      <button
+        *ngIf="currentView === Creator && !editBodyField"
+        (click)="onEditBody()"
+        class="EditBTN"
+      >
+        EDIT
+      </button>
+      <div class="EditMode" *ngIf="editBodyField">
+        <textarea
+          class="LTextarea"
+          type="text"
+          [(ngModel)]="post.body"
+        ></textarea>
+        <button class="SaveBTN" (click)="onSave()">SAVE</button>
+      </div>
+
       <div class="Tags">
         <p class="Tag" *ngFor="let tag of post.tags; let last = last">
           #{{ tag }}
@@ -49,11 +87,18 @@
       type="submit"
       name="addComment"
       id="addComment"
-      value="+"
+      value="Submit"
     />
   </form>
   <div class="CommentSection">
     <div class="OneComment" *ngFor="let PostComment of post.comments">
+      <button
+        class="DeleteBTN"
+        *ngIf="currentView === Creator"
+        (click)="onDeleteComment(PostComment)"
+      >
+        X
+      </button>
       <p class="CommentText">{{ PostComment.text }}</p>
       <p class="CommentName">/ {{ PostComment.name }}</p>
     </div>

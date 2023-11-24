@@ -41,7 +41,9 @@ export class BlogComponent implements OnInit {
     this.currentView = this.viewStateService.getCurrentView();
     this.posts = this.getSavedPostData() || [];
   }
-
+  createNewPost() {
+    this.router.navigate(['/CreatePost']);
+  }
   navigateToPost(postId: string) {
     this.router.navigate(['/BlogPost', postId]);
   }
