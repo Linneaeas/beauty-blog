@@ -1,1 +1,33 @@
-
+.HomePage {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.PostsCont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.OnePost {
+  background-color: var(--primaryLighter);
+  box-shadow: 2px 2px 2px var(--boxShadow);
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 20px;
+}
+.OnePost:hover {
+  cursor: pointer;
+  scale: 102%;
+}
+.PostPic {
+  height: 180px;
+  object-fit: contain;
+}
+.SmallH2 {
+  font-size: 35px;
+}

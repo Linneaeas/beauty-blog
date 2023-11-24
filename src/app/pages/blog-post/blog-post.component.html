@@ -1,12 +1,5 @@
 <main class="Deleted" *ngIf="deleted">This Post have been deleted</main>
 <main class="BlogPost" *ngIf="!deleted">
-  <button
-    class="DeleteBTN"
-    *ngIf="currentView === Creator"
-    (click)="onDeletePost()"
-  >
-    DELETE POST
-  </button>
   <div class="TitleContainer">
     <h2 class="PostTitle" *ngIf="!editTitleField">{{ post.title }}</h2>
     <button
@@ -21,6 +14,30 @@
       <button class="SaveBTN" (click)="onSave()">SAVE</button>
     </div>
   </div>
+  <form class="CategoryContainer" *ngIf="currentView === Creator">
+    <div class="Category">
+      <label for="highlight">HIGHLIGHT</label>
+      <input
+        class="Checkbox"
+        type="checkbox"
+        id="highlight"
+        name="highlight"
+        [(ngModel)]="post.highlight"
+        (change)="onSave()"
+      />
+    </div>
+    <div class="Category">
+      <label for="collaboration">COLLABORATION</label>
+      <input
+        class="Checkbox"
+        type="checkbox"
+        id="collaboration"
+        name="collaboration"
+        [(ngModel)]="post.collaboration"
+        (change)="onSave()"
+      />
+    </div>
+  </form>
 
   <section class="PostContent">
     <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
@@ -103,4 +120,11 @@
       <p class="CommentName">/ {{ PostComment.name }}</p>
     </div>
   </div>
+  <button
+    class="DeleteBTN"
+    *ngIf="currentView === Creator"
+    (click)="onDeletePost()"
+  >
+    DELETE POST
+  </button>
 </main>

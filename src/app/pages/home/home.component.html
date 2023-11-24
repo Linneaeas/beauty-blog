@@ -1,3 +1,28 @@
 <main class="HomePage">
-  <h2>Welcome!</h2>
+  <section class="OneSection">
+    <h2 class="SmallH2">HIGHLIGHTS</h2>
+    <div class="PostsCont">
+      <section
+        class="OnePost"
+        *ngFor="let post of posts"
+        (click)="navigateToPost(post.id)"
+      >
+        <img class="PostPic" [src]="post.thumbnailUrl" />
+        <h3 class="PostTitle">{{ post.title }}</h3>
+      </section>
+    </div>
+  </section>
+  <section class="OneSection">
+    <h2 class="SmallH2">COLLABORATIONS</h2>
+    <div class="PostsCont">
+      <section
+        class="OnePost"
+        *ngFor="let post of posts"
+        (click)="navigateToPost(post.id)"
+      >
+        <img class="PostPic" [src]="post.thumbnailUrl" />
+        <h3 class="PostTitle">{{ post.title }}</h3>
+      </section>
+    </div>
+  </section>
 </main>

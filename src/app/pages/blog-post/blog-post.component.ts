@@ -27,6 +27,8 @@ export class BlogPostComponent implements OnInit {
     likes: 0,
     dislikes: 0,
     comments: [],
+    highlight: false,
+    collaboration: false,
   };
   newComment: PostComment = {
     id: '',

@@ -25,6 +25,8 @@ export class CreatePostComponent {
     likes: 0,
     dislikes: 0,
     comments: [],
+    highlight: false,
+    collaboration: false,
   };
   tagInput: string = '';
 
@@ -81,6 +83,8 @@ export class CreatePostComponent {
       likes: this.post.likes,
       dislikes: this.post.dislikes,
       comments: this.post.comments,
+      highlight: this.post.highlight,
+      collaboration: this.post.collaboration,
     };
 
     let posts: Post[] = this.localStorageService.get('posts') || [];
@@ -98,6 +102,8 @@ export class CreatePostComponent {
       likes: 0,
       dislikes: 0,
       comments: [],
+      highlight: false,
+      collaboration: false,
     };
     this.tagInput = '';
   }

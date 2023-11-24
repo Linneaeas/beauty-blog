@@ -10,4 +10,6 @@ export interface Post {
   likes: number;
   dislikes: number;
   comments: PostComment[];
+  highlight: boolean;
+  collaboration: boolean;
 }
