@@ -1,10 +1,11 @@
 <main class="HomePage">
-  <section class="OneSection">
+  <h2>ALEXS BEAUTY & MAKE-UP</h2>
+  <section class="OneSection Top">
     <h2 class="SmallH2">HIGHLIGHTS</h2>
     <div class="PostsCont">
       <section
         class="OnePost"
-        *ngFor="let post of posts"
+        *ngFor="let post of getHighlightPosts()"
         (click)="navigateToPost(post.id)"
       >
         <img class="PostPic" [src]="post.thumbnailUrl" />
@@ -17,7 +18,7 @@
     <div class="PostsCont">
       <section
         class="OnePost"
-        *ngFor="let post of posts"
+        *ngFor="let post of getCollaborationPosts()"
         (click)="navigateToPost(post.id)"
       >
         <img class="PostPic" [src]="post.thumbnailUrl" />

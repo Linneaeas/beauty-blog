@@ -1,7 +1,5 @@
-.HomePage {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
+.OneSection.Top {
+  margin-top: -1em;
 }
 .PostsCont {
   display: flex;
@@ -25,9 +23,10 @@
   scale: 102%;
 }
 .PostPic {
-  height: 180px;
+  height: 170px;
   object-fit: contain;
 }
 .SmallH2 {
-  font-size: 35px;
+  font-size: 30px;
+  color: var(--primaryDark);
 }

@@ -13,7 +13,7 @@
 
 .CategoryContainer {
   display: flex;
-  margin-top: -2em;
+
   gap: 4em;
 }
 
@@ -125,4 +125,8 @@ input[type="checkbox"]:checked {
 
 .DeleteBTN:hover {
   color: red;
+}
+.EditMode {
+  display: flex;
+  gap: 1rem;
 }

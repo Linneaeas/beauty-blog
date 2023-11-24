@@ -41,4 +41,10 @@ export class HomeComponent {
   navigateToPost(postId: string) {
     this.router.navigate(['/BlogPost', postId]);
   }
+  getCollaborationPosts(): Post[] {
+    return this.posts.filter((post) => post.collaboration === true);
+  }
+  getHighlightPosts(): Post[] {
+    return this.posts.filter((post) => post.highlight === true);
+  }
 }
