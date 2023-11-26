@@ -15,7 +15,6 @@
   justify-content: center;
   flex-wrap: wrap;
 }
-
 .About {
   display: flex;
   align-items: center;
@@ -35,10 +34,6 @@
   align-items: center;
   gap: 1rem;
 }
-.EditModeBody {
-  height: 10rem;
-  width: 40rem;
-}
 .ImageContainer {
   display: flex;
   flex-direction: column;
@@ -50,23 +45,7 @@
   border-radius: 4px;
 }
 
-.EditModeImage {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
-.Hidden {
-  position: absolute;
-  top: -1000px;
-}
-.FileInput {
-  height: 0.5rem;
-  width: 8rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/*CONTACT*/
 .ContactPage {
   background: var(--primaryLight);
   width: 100%;
@@ -83,12 +62,10 @@
   position: fixed;
   bottom: 0;
 }
-
 .ContactBTN {
   box-shadow: none;
   font-size: 25px;
 }
-
 .ContactForm {
   display: flex;
   flex-direction: column;
@@ -99,14 +76,6 @@
   margin-top: 3rem;
   bottom: -100%;
   transition: transform 1s ease;
-}
-.ContactForm.show {
-  transform: translateY(0);
-}
-h3 {
-  font-size: 30px;
-  letter-spacing: 2.5px;
-  color: var(--primaryMedium);
 }
 .FormFields {
   display: flex;
@@ -145,4 +114,27 @@ td {
   font-size: 20px;
   text-align: center;
   padding: 1rem;
+}
+
+/*CREATOR VIEW*/
+.EditModeBody {
+  height: 10rem;
+  width: 40rem;
+}
+.EditModeImage {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.Hidden {
+  position: absolute;
+  top: -1000px;
+}
+.FileInput {
+  height: 0.5rem;
+  width: 8rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

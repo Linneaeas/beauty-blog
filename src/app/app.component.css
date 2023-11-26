@@ -1,3 +1,4 @@
+/*NAVIGATION*/
 header {
   background-color: var(--primaryMedium);
   padding: 1em;
@@ -21,7 +22,6 @@ a:hover,
 .active {
   color: var(--primaryDark);
 }
-
 .Logo {
   display: flex;
   flex-direction: column;
@@ -34,6 +34,7 @@ a:hover,
 .Subject {
   font-size: 0.8em;
 }
+
 /*TOGGLE BUTTON*/
 .ToggleBTN {
   position: absolute;
@@ -41,7 +42,7 @@ a:hover,
   border: none;
   box-shadow: none;
   max-height: fit-content;
-  margin-top: -1.5em;
+  margin-top: -1em;
   margin-left: -1em;
   display: grid;
 }

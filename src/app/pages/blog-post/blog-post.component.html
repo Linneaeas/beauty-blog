@@ -1,4 +1,20 @@
 <main class="Deleted" *ngIf="deleted">This Post have been deleted</main>
+<button
+  class="HomeBTN"
+  routerLink="/Home"
+  routerLinkActive="active"
+  ariaCurrentWhenActive="page"
+>
+  HOME
+</button>
+<button
+  class="LatestBTN"
+  routerLink="/Blog"
+  routerLinkActive="active"
+  ariaCurrentWhenActive="page"
+>
+  LATEST POSTS
+</button>
 <main class="BlogPost" *ngIf="!deleted">
   <div class="TitleContainer">
     <h2 class="PostTitle" *ngIf="!editTitleField">{{ post.title }}</h2>
@@ -38,7 +54,6 @@
       />
     </div>
   </form>
-
   <section class="PostContent">
     <img class="PostPic" [src]="post.thumbnailUrl" alt="Post Image" />
     <div class="BodyTags">
@@ -58,7 +73,6 @@
         ></textarea>
         <button class="SaveBTN" (click)="onSave()">SAVE</button>
       </div>
-
       <div class="Tags">
         <p class="Tag" *ngFor="let tag of post.tags; let last = last">
           #{{ tag }}
@@ -75,13 +89,11 @@
       <button class="LikeBTN" (click)="increaseLikes()"></button>
       <span class="NoOf Likes">{{ post.likes }}</span>
     </div>
-
     <button
       class="CommentBTN"
       (click)="showCommentForm = !showCommentForm"
     ></button>
   </div>
-
   <form class="NewComment" (ngSubmit)="addComment()" *ngIf="showCommentForm">
     <input
       class="SInput"

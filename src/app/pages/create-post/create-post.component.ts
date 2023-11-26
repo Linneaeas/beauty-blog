@@ -39,26 +39,25 @@ export class CreatePostComponent {
     });
   }
 
-  /* handleFileInput=TEMPORARY FOR IMAGES, change to thumbnail url link*/
+  /*Handle Image*/
   handleFileInput(event: any) {
     const files: FileList = event.target.files;
-
     if (files.length > 0) {
       const file = files[0];
       const reader = new FileReader();
-
       reader.onload = (e) => {
         this.post.thumbnailUrl = reader.result as string;
       };
-
       reader.readAsDataURL(file);
     }
   }
+
   onSubmit() {
     if (!this.post.thumbnailUrl || !this.post.title) {
       return;
     }
 
+    /*Creating & Formating creation date for ID*/
     const currentDate = new Date();
     const formattedDate = currentDate
       .toLocaleDateString('en-GB', {
@@ -69,10 +68,12 @@ export class CreatePostComponent {
       .replace(/ /g, '_');
 
     const postId = `${this.post.title}_${formattedDate}`;
-
     this.post.id = postId;
+
+    /*Handle Tags*/
     this.post.tags = this.tagInput.split(',').map((tag) => tag.trim());
 
+    /*Creation & Saving of post*/
     const newPost: Post = {
       id: this.post.id,
       title: this.post.title,
@@ -89,7 +90,6 @@ export class CreatePostComponent {
 
     let posts: Post[] = this.localStorageService.get('posts') || [];
     posts.push(newPost);
-
     this.localStorageService.set('posts', posts);
 
     this.post = {

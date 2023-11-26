@@ -45,7 +45,6 @@ export class BlogPostComponent implements OnInit {
     });
   }
 
-  /*POSTS % LOCALSTORAGE*/
   ngOnInit() {
     const postId = this.route.snapshot.paramMap.get('id');
     const postData = this.getSavedPostData().find(
@@ -59,6 +58,7 @@ export class BlogPostComponent implements OnInit {
       this.post.dislikes = this.post.dislikes || 0;
     }
   }
+  /*POSTS & LOCALSTORAGE*/
   getSavedPostData(): Post[] {
     return this.localStorageService.get('posts');
   }
@@ -72,6 +72,7 @@ export class BlogPostComponent implements OnInit {
       }
     }
   }
+
   /*REACTIONS*/
   increaseLikes() {
     if (this.post) {
@@ -85,6 +86,7 @@ export class BlogPostComponent implements OnInit {
       this.updatePostInLocalStorage();
     }
   }
+
   /*COMMENTS*/
   showCommentForm: boolean = false;
 

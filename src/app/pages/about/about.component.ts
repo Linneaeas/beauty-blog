@@ -31,7 +31,6 @@ export class AboutComponent {
       this.currentView = view;
     });
   }
-
   ngOnInit() {
     const storedCreatorData = this.localStorageService.get('creatorData');
     if (storedCreatorData) {
@@ -42,11 +41,9 @@ export class AboutComponent {
   editNameFields: boolean = false;
   editBodyFields: boolean = false;
   editImage: boolean = false;
-
   onEditName() {
     this.editNameFields = true;
   }
-
   onEditBody() {
     this.editBodyFields = true;
   }
@@ -55,15 +52,12 @@ export class AboutComponent {
   }
   handleFileInput(event: any) {
     const files: FileList = event.target.files;
-
     if (files.length > 0) {
       const file = files[0];
       const reader = new FileReader();
-
       reader.onload = (e) => {
         this.creator.image = reader.result as string;
       };
-
       reader.readAsDataURL(file);
     }
   }

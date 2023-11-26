@@ -10,34 +10,6 @@
 .TitleContainer {
   display: flex;
 }
-
-.CategoryContainer {
-  display: flex;
-
-  gap: 4em;
-}
-
-.Category {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.Checkbox {
-  box-shadow: none;
-}
-input[type="checkbox"] {
-  appearance: none;
-  width: 10rem;
-  height: 1.6rem;
-  background-color: var(--primaryLighter);
-  position: absolute;
-  margin-top: -0.4rem;
-  border-radius: 5px;
-}
-input[type="checkbox"]:checked {
-  border: 2px solid var(--primaryDark);
-}
-
 .PostContent {
   display: flex;
   justify-content: center;
@@ -48,7 +20,6 @@ input[type="checkbox"]:checked {
   max-height: 30rem;
   border-radius: 4px;
 }
-
 .BodyTags {
   background-color: var(--primaryLighter);
   box-shadow: 2px 2px 2px var(--boxShadow);
@@ -65,6 +36,8 @@ input[type="checkbox"]:checked {
   gap: 0.5rem;
   font-size: smaller;
 }
+
+/*INTERACTIONS*/
 .Reactions {
   display: flex;
   gap: 5rem;
@@ -95,7 +68,6 @@ input[type="checkbox"]:checked {
   aspect-ratio: 1;
   box-shadow: none;
 }
-
 .CommentSection {
   display: flex;
   justify-content: center;
@@ -104,7 +76,6 @@ input[type="checkbox"]:checked {
 }
 .OneComment {
   display: flex;
-
   gap: 0.5rem;
   background-color: var(--primaryLighter);
   padding: 0.5rem;
@@ -122,7 +93,46 @@ input[type="checkbox"]:checked {
   display: flex;
   gap: 1rem;
 }
-
+/*NAV BTN */
+.HomeBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: -1.5em;
+}
+.LatestBTN {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 1.5rem;
+}
+/*CREATOR VIEW*/
+.CategoryContainer {
+  display: flex;
+  gap: 4em;
+}
+.Category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Checkbox {
+  box-shadow: none;
+}
+input[type="checkbox"] {
+  appearance: none;
+  width: 10rem;
+  height: 1.6rem;
+  background-color: var(--primaryLighter);
+  position: absolute;
+  margin-top: -0.4rem;
+  border-radius: 5px;
+}
+input[type="checkbox"]:checked {
+  border: 2px solid var(--primaryDark);
+}
 .DeleteBTN:hover {
   color: red;
 }

@@ -27,7 +27,6 @@ export class HomeComponent {
       this.currentView = view;
     });
   }
-
   ngOnInit() {
     this.viewStateService.setCurrentView(
       this.viewStateService.getCurrentView()
@@ -35,6 +34,7 @@ export class HomeComponent {
     this.currentView = this.viewStateService.getCurrentView();
     this.posts = this.getSavedPostData() || [];
   }
+
   getSavedPostData() {
     return this.localStorageService.get('posts');
   }

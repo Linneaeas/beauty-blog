@@ -23,7 +23,15 @@ h2 {
   gap: 1em;
   padding: 1rem;
 }
-
+.SmallH2 {
+  font-size: 30px;
+  color: var(--primaryDark);
+}
+h3 {
+  font-size: 25px;
+  letter-spacing: 2.5px;
+  color: var(--primaryDark);
+}
 main {
   display: flex;
   align-items: center;
@@ -60,7 +68,6 @@ button:hover,
   cursor: pointer;
   scale: 110%;
 }
-
 input,
 textarea {
   background: var(--primaryMediumOpace);
